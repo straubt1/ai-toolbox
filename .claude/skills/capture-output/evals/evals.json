@@ -1,0 +1,23 @@
+{
+  "skill_name": "capture-output",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "capture output for examples/01-hello-action",
+      "expected_output": "Generates assets/01-hello-action-capture.sh, runs it to produce assets/01-hello-action-output.txt, updates the ## Expected Output section in examples/01-hello-action/README.md with filtered terraform output including Action started/complete lines and Plan summary, with <pet-name> placeholder replacing dynamic random_pet ID",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "update expected output for examples/03-before-after",
+      "expected_output": "Generates assets/03-before-after-capture.sh, runs it, updates ## Expected Output in examples/03-before-after/README.md showing before-action output, resource creation, and after-action output with <pet-name> placeholder",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "capture demo output for examples/08-action-variables",
+      "expected_output": "Generates assets/08-action-variables-capture.sh, runs multiple sections (default values and CLI override), updates ## Expected Output in examples/08-action-variables/README.md with two labeled sub-sections showing different variable values",
+      "files": []
+    }
+  ]
+}
