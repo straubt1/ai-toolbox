@@ -109,6 +109,6 @@ If not present, create a task in the root `Taskfile.yml` to be able to regenerat
 ### Step 5: Verify
 
 - Confirm `assets/<example-name>.gif` exists
-- Confirm `assets/<example-name>.tape` exists
+- Confirm all expected tape files exist (for each recorded section), e.g. `assets/<example-name>-01.tape`, `assets/<example-name>-02.tape`, ...
 - Confirm the example's `README.md` contains the GIF reference
 - Report the GIF file size to the user
