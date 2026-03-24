@@ -38,10 +38,10 @@ Each of these code blocks will be a separate section that results in a *.tape fi
 
 Write the tape file to `assets/<example-name>-<section-n>.tape` at the repo root. The example name is the directory name (e.g., `01-hello-action-01`).
 
-**Always start with these common settings:**
+**For each section, always start with these common settings (adjusting `<section-n>` appropriately):**
 
 ```tape
-Output assets/<example-name>.gif
+Output assets/<example-name>-<section-n>.gif
 Require terraform
 
 Set Shell bash
