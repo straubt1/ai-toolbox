@@ -5,7 +5,7 @@ description: >
   "capture demo output", or wants to run the terraform commands from an example's ## Usage
   section and write the real terminal output into the ## Expected Output section of the README.
   Make sure to use this skill whenever the user mentions updating expected output, capturing
-  command output, or running usage examples for any directory in the examples/ folder.
+  command output, or running usage examples for any directory.
 ---
 
 # Capture Output Skill
@@ -19,7 +19,7 @@ the script and re-run cheaply without reinvoking the full skill.
 
 ## Input
 
-The user provides a path to an example directory (e.g., `examples/03-before-after`).
+The user provides a path to a directory (e.g., `path/to/my-example`).
 The directory contains a `main.tf` and a `README.md` with a `## Usage` section containing
 one or more shell code blocks.
 
@@ -42,7 +42,7 @@ Write `assets/<example-name>-capture.sh` at the repo root.
 ```bash
 #!/bin/bash
 set -e
-cd examples/<example-name>
+cd <path-to-directory>
 
 # Silent setup: init and clean any existing state
 terraform init -input=false > /dev/null 2>&1
@@ -158,7 +158,7 @@ Add a `capture:<example-name>` task to `Taskfile.yml` at the repo root (if not a
 
 ```yaml
   capture:03-before-after:
-    desc: Run capture script and update Expected Output in examples/03-before-after
+    desc: Run capture script and update Expected Output for 03-before-after
     cmds:
       - bash assets/03-before-after-capture.sh > assets/03-before-after-output.txt 2>&1
 ```

@@ -4,7 +4,7 @@ description: >
   Use when the user asks to "record a demo", "create a gif", "generate a tape file",
   "record-demo", or wants to create a VHS terminal recording for a Terraform example.
   Make sure to use this skill whenever the user mentions VHS, tape files, terminal recordings,
-  or demo GIFs for any example in the examples/ directory.
+  or demo GIFs for any directory.
 ---
 
 # Record Demo Skill
@@ -13,8 +13,8 @@ Generate a VHS terminal recording (GIF) for a Terraform example directory.
 
 ## Input
 
-The user provides a path to a directory (e.g., `examples/01-hello-action`).
-This directory will either contain a `main.tf` file directly, or sub-directories with their own `main.tf` files (e.g., `examples/02-old-way-vs-new-way/old-way/main.tf` and `examples/02-old-way-vs-new-way/new-way/main.tf`).
+The user provides a path to a directory (e.g., `path/to/my-example`).
+This directory will either contain a `main.tf` file directly, or sub-directories with their own `main.tf` files (e.g., `path/to/my-example/old-way/main.tf` and `path/to/my-example/new-way/main.tf`).
 There will also be a `README.md` file in the example directory that has a "## Usage" section.
 
 
@@ -47,7 +47,7 @@ Require terraform
 Set Shell bash
 Set Theme "Catppuccin Mocha"
 Set FontSize 16
-Set FontFamily "Roboto Mono"
+Set FontFamily "RobotoMono Nerd Font"
 Set Width 1200
 Set Height 800
 Set Padding 20
@@ -62,7 +62,7 @@ Set WaitTimeout 30s
 
 **Tape structure guidelines:**
 
-- Navigate to the example directory with `Type "cd examples/<example-name>"` + `Enter`
+- Navigate to the target directory with `Type "cd <path-to-directory>"` + `Enter`
   - `Hide` this and `clear` after.
 - The following commands should be placed inside a `Hide`/`Show` block:
   - `terraform init`
@@ -100,7 +100,7 @@ If not present, create a task in the root `Taskfile.yml` to be able to regenerat
 
 ```yaml
   record:01-hello-action:
-    desc: Generate the demo GIF for examples/01-hello-action
+    desc: Generate the demo GIF for 01-hello-action
     cmds:
       - vhs assets/01-hello-action-01.tape
       - vhs assets/01-hello-action-02.tape
